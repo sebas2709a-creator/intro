@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Interactiva: Input Email y sus Atributos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-full flex flex-col justify-between selection:bg-indigo-500 selection:text-white">
+
+    <header class="bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4 py-8 text-center">
+            <span class="bg-indigo-500/30 text-indigo-100 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider border border-indigo-400/30">HTML5 Guide</span>
+            <h1 class="text-3xl md:text-5xl font-extrabold mt-3 tracking-tight">El Elemento &lt;input type="email"&gt;</h1>
+            <p class="text-indigo-100 mt-2 max-w-2xl mx-auto text-sm md:text-base">Guía completa y interactiva de todos sus atributos, validaciones nativas y ejemplos en tiempo real.</p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 flex-grow">
+        
+        <!-- Left Column: Attributes Reference Guide -->
+        <section class="lg:col-span-7 space-y-6">
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
+                <h2 class="text-xl font-bold text-slate-900 border-b pb-4 flex items-center gap-2">
+                    <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    Atributos Soportados
+                </h2>
+                
+                <div class="mt-6 space-y-5">
+                    <!-- Attribute item -->
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-indigo-200 transition-colors">
+                        <div class="flex items-center justify-between">
+                            <code class="text-sm font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded">value</code>
+                            <span class="text-xs font-medium text-slate-500 bg-slate-200/60 px-2 py-0.5 rounded">String</span>
+                        </div>
+                        <p class="text-sm text-slate-600 mt-2">Define el valor inicial o predeterminado que aparecerá dentro del campo de correo electrónico al cargar la página.</p>
+                    </div>
+
+                    <!-- Attribute item -->
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-indigo-200 transition-colors">
+                        <div class="flex items-center justify-between">
+                            <code class="text-sm font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded">placeholder</code>
+                            <span class="text-xs font-medium text-slate-500 bg-slate-200/60 px-2 py-0.5 rounded">String</span>
+                        </div>
+                        <p class="text-sm text-slate-600 mt-2">Muestra un texto guía o pista tenue dentro del campo cuando está vacío para orientar al usuario (ej. <i>correo@ejemplo.com</i>).</p>
+                    </div>
+
+                    <!-- Attribute item -->
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-indigo-200 transition-colors">
+                        <div class="flex items-center justify-between">
+                            <code class="text-sm font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded">required</code>
+                            <span class="text-xs font-medium text-amber-700 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded">Booleano</span>
+                        </div>
+                        <p class="text-sm text-slate-600 mt-2">Indica que el campo es obligatorio. El formulario no podrá enviarse si el input se encuentra vacío.</p>
+                    </div>
+
+                    <!-- Attribute item -->
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-indigo-200 transition-colors">
+                        <div class="flex items-center justify-between">
+                            <code class="text-sm font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded">pattern</code>
+                            <span class="text-xs font-medium text-violet-700 bg-violet-50 border border-violet-200 px-2 py-0.5 rounded">Expresión Regular</span>
+                        </div>
+                        <p class="text-sm text-slate-600 mt-2">Establece una expresión regular (Regex) que el texto ingresado debe cumplir obligatoriamente para ser válido.</p>
+                    </div>
+
+                    <!-- Attribute item -->
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-indigo-200 transition-colors">
+                        <div class="flex items-center justify-between">
+                            <div class="flex gap-2">
+                                <code class="text-sm font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded">minlength</code>
+                                <code class="text-sm font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded">maxlength</code>
+                            </div>
+                            <span class="text-xs font-medium text-slate-500 bg-slate-200/60 px-2 py-0.5 rounded">Número</span>
+                        </div>
+                        <p class="text-sm text-slate-600 mt-2">Limitan la cantidad mínima y máxima de caracteres permitidos en el campo de texto.</p>
+                    </div>
+
+                    <!-- Attribute item -->
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-indigo-200 transition-colors">
+                        <div class="flex items-center justify-between">
+                            <code class="text-sm font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded">size</code>
+                            <span class="text-xs font-medium text-slate-500 bg-slate-200/60 px-2 py-0.5 rounded">Número</span>
+                        </div>
+                        <p class="text-sm text-slate-600 mt-2">Determina el ancho visual del input medido en cantidad de caracteres visibles (por defecto suele ser 20).</p>
+                    </div>
+
+                    <!-- Attribute item -->
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-indigo-200 transition-colors">
+                        <div class="flex items-center justify-between">
+                            <code class="text-sm font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded">autocomplete</code>
+                            <span class="text-xs font-medium text-slate-500 bg-slate-200/60 px-2 py-0.5 rounded">Token</span>
+                        </div>
+                        <p class="text-sm text-slate-600 mt-2">Habilita o deshabilita el auto-rellenado del navegador (ej. <code>email</code> o <code>off</code>).</p>
+                    </div>
+
+                    <!-- Attribute item -->
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-indigo-200 transition-colors">
+                        <div class="flex items-center justify-between">
+                            <code class="text-sm font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded">list</code>
+                            <span class="text-xs font-medium text-slate-500 bg-slate-200/60 px-2 py-0.5 rounded">ID de &lt;datalist&gt;</span>
+                        </div>
+                        <p class="text-sm text-slate-600 mt-2">Asocia una lista de sugerencias predefinidas mediante un elemento <code>&lt;datalist&gt;</code>.</p>
+                    </div>
+
+                    <!-- Attribute item -->
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-indigo-200 transition-colors">
+                        <div class="flex items-center justify-between">
+                            <div class="flex gap-2">
+                                <code class="text-sm font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded">readonly</code>
+                                <code class="text-sm font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded">disabled</code>
+                            </div>
+                            <span class="text-xs font-medium text-amber-700 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded">Booleano</span>
+                        </div>
+                        <p class="text-sm text-slate-600 mt-2"><b>readonly:</b> Permite leer/seleccionar pero no editar. <b>disabled:</b> Desactiva completamente el campo y no se envía en formularios.</p>
+                    </div>
+
+                    <!-- Attribute item -->
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-indigo-200 transition-colors">
+                        <div class="flex items-center justify-between">
+                            <code class="text-sm font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded">autofocus</code>
+                            <span class="text-xs font-medium text-amber-700 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded">Booleano</span>
+                        </div>
+                        <p class="text-sm text-slate-600 mt-2">Selecciona y enfoca automáticamente este campo de entrada al cargar la página en el navegador.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="lg:col-span-5 space-y-6">
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8 sticky top-6">
+                <h2 class="text-xl font-bold text-slate-900 border-b pb-4 flex items-center justify-between">
+                    <span class="flex items-center gap-2">
+                        <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        Prueba Interactiva
+                    </span>
+                    <span class="text-xs bg-emerald-50 text-emerald-700 border border-emerald-200 px-2.5 py-1 rounded-full font-medium">En Vivo</span>
+                </h2>
+
+                <form id="demoForm" class="mt-6 space-y-4" onsubmit="event.preventDefault(); showSuccessModal();">
+                    <div>
+                        <label for="interactiveEmail" class="block text-sm font-semibold text-slate-700 mb-1">
+                            Correo Electrónico <span class="text-rose-500">*</span>
+                        </label>
+                        <p class="text-xs text-slate-500 mb-2">Configurado con todos los atributos explicados:</p>
+                        
+                        <input 
+                            type="email" 
+                            id="interactiveEmail"
+                            name="correo"
+                            value="usuario@correo.com"
+                            placeholder="tucorreo@dominio.com"
+                            required
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                            minlength="10"
+                            maxlength="50"
+                            size="30"
+                            autocomplete="email"
+                            list="sugerenciasDominios"
+                            class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm transition-all"
+                            oninput="updateStatus()"
+                        >
+
+                        <!-- Datalist source -->
+                        <datalist id="sugerenciasDominios">
+                            <option value="usuario@gmail.com">
+                            <option value="usuario@outlook.com">
+                            <option value="usuario@yahoo.com">
+                            <option value="usuario@empresa.org">
+                        </datalist>
+                    </div>
+
+                    <!-- Live Attribute Controller Toggles -->
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-3">
+                        <span class="text-xs font-bold text-slate-700 uppercase tracking-wider block">Controla los atributos en tiempo real:</span>
+                        
+                        <div class="grid grid-cols-2 gap-2 text-xs">
+                            <label class="flex items-center gap-2 cursor-pointer bg-white p-2 rounded-lg border border-slate-200 hover:bg-slate-100">
+                                <input type="checkbox" id="toggleRequired" checked onchange="toggleAttribute('required', this.checked)" class="rounded text-indigo-600 focus:ring-indigo-500">
+                                <span>required</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer bg-white p-2 rounded-lg border border-slate-200 hover:bg-slate-100">
+                                <input type="checkbox" id="toggleReadonly" onchange="toggleAttribute('readonly', this.checked)" class="rounded text-indigo-600 focus:ring-indigo-500">
+                                <span>readonly</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer bg-white p-2 rounded-lg border border-slate-200 hover:bg-slate-100">
+                                <input type="checkbox" id="toggleDisabled" onchange="toggleAttribute('disabled', this.checked)" class="rounded text-indigo-600 focus:ring-indigo-500">
+                                <span>disabled</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer bg-white p-2 rounded-lg border border-slate-200 hover:bg-slate-100">
+                                <input type="checkbox" id="togglePattern" checked onchange="togglePatternAttr(this.checked)" class="rounded text-indigo-600 focus:ring-indigo-500">
+                                <span>pattern</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Live Validation Status Monitor -->
+                    <div id="statusBox" class="p-3.5 rounded-xl border text-xs bg-indigo-50 border-indigo-100 text-indigo-900 transition-all">
+                        <div class="font-bold flex items-center gap-1.5 mb-1">
+                            <span id="statusIcon">⚡</span> Estado de Validación Nativa:
+                        </div>
+                        <div id="statusText" class="font-mono text-[11px] leading-relaxed">Escribe un correo válido para comprobar la validación...</div>
+                    </div>
+
+                    <!-- Submit action button -->
+                    <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-4 rounded-xl shadow-md hover:shadow-indigo-500/25 transition-all text-sm flex items-center justify-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                        Probar Envío de Formulario
+                    </button>
+                </form>
+
+                <!-- HTML Code snippet display box -->
+                <div class="mt-6 border-t pt-4">
+                    <span class="text-xs font-bold text-slate-600 uppercase tracking-wider block mb-2">Código HTML utilizado:</span>
+                    <div class="relative bg-slate-900 text-slate-100 p-3.5 rounded-xl text-xs font-mono overflow-x-auto shadow-inner">
+                        <button onclick="copyCode()" class="absolute top-2 right-2 bg-slate-800 hover:bg-slate-700 text-slate-300 px-2 py-1 rounded text-[10px] transition">Copiar</button>
+                        <pre id="codeSnippet">&lt;input 
+  type="email" 
+  value="usuario@correo.com"
+  placeholder="tucorreo@dominio.com"
+  required
+  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+  minlength="10"
+  maxlength="50"
+  size="30"
+  autocomplete="email"
+  list="sugerenciasDominios"
+&gt;</pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="successModal" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-2xl max-w-sm w-full p-6 text-center shadow-xl border border-slate-100 animate-in fade-in zoom-in duration-200">
+            <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4 text-xl">✓</div>
+            <h3 class="text-lg font-bold text-slate-900">¡Validación Exitosa!</h3>
+            <p class="text-sm text-slate-600 mt-1">El formulario se envió correctamente porque el correo cumple con todas las reglas y atributos establecidos.</p>
+            <button onclick="closeSuccessModal()" class="mt-5 w-full bg-slate-900 hover:bg-slate-800 text-white font-medium py-2.5 rounded-xl text-sm transition">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-500">
+        <p>Página de ejemplo desarrollada con HTML5 nativo y Tailwind CSS.</p>
+    </footer>
+
+    <script>
+        const inputElem = document.getElementById('interactiveEmail');
+        
+        function updateStatus() {
+            const statusBox = document.getElementById('statusBox');
+            const statusText = document.getElementById('statusText');
+            const statusIcon = document.getElementById('statusIcon');
+            
+            // Check HTML5 validity
+            if (inputElem.validity.valid) {
+                statusBox.className = "p-3.5 rounded-xl border text-xs bg-emerald-50 border-emerald-200 text-emerald-900 transition-all";
+                statusIcon.textContent = "✅";
+                statusText.textContent = "El valor actual es COMPLETAMENTE VÁLIDO según los atributos configurados.";
+            } else {
+                statusBox.className = "p-3.5 rounded-xl border text-xs bg-rose-50 border-rose-200 text-rose-900 transition-all";
+                statusIcon.textContent = "❌";
+                
+                let messages = [];
+                if (inputElem.validity.valueMissing) messages.push("• El campo es obligatorio (required).");
+                if (inputElem.validity.typeMismatch) messages.push("• El formato no coincide con una dirección de correo válida.");
+                if (inputElem.validity.tooShort) messages.push(`• Muy corto (mínimo ${inputElem.minLength} caracteres).`);
+                if (inputElem.validity.tooLong) messages.push(`• Muy largo (máximo ${inputElem.maxLength} caracteres).`);
+                if (inputElem.validity.patternMismatch) messages.push("• No coincide con la expresión regular del atributo pattern.");
+                
+                statusText.innerHTML = messages.join('<br>') || "Error general de validación.";
+            }
+        }
+
+        function toggleAttribute(attrName, isChecked) {
+            if (isChecked) {
+                inputElem.setAttribute(attrName, '');
+            } else {
+                inputElem.removeAttribute(attrName);
+            }
+            updateCodeSnippet();
+            updateStatus();
+        }
+
+        function togglePatternAttr(isChecked) {
+            const patternVal = "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$";
+            if (isChecked) {
+                inputElem.setAttribute('pattern', patternVal);
+            } else {
+                inputElem.removeAttribute('pattern');
+            }
+            updateCodeSnippet();
+            updateStatus();
+        }
+
+        function updateCodeSnippet() {
+            let snippet = `<input \n  type="email" \n  value="${inputElem.value}"\n  placeholder="${inputElem.placeholder}"`;
+            if (inputElem.hasAttribute('required')) snippet += `\n  required`;
+            if (inputElem.hasAttribute('pattern')) snippet += `\n  pattern="${inputElem.getAttribute('pattern')}"`;
+            if (inputElem.hasAttribute('minlength')) snippet += `\n  minlength="${inputElem.minLength}"`;
+            if (inputElem.hasAttribute('maxlength')) snippet += `\n  maxlength="${inputElem.maxLength}"`;
+            if (inputElem.hasAttribute('size')) snippet += `\n  size="${inputElem.size}"`;
+            if (inputElem.hasAttribute('autocomplete')) snippet += `\n  autocomplete="${inputElem.autocomplete}"`;
+            if (inputElem.hasAttribute('list')) snippet += `\n  list="${inputElem.getAttribute('list')}"`;
+            if (inputElem.hasAttribute('readonly')) snippet += `\n  readonly`;
+            if (inputElem.hasAttribute('disabled')) snippet += `\n  disabled`;
+            snippet += `\n>`;
+            document.getElementById('codeSnippet').textContent = snippet;
+        }
+
+        function showSuccessModal() {
+            document.getElementById('successModal').classList.remove('hidden');
+            document.getElementById('successModal').classList.add('flex');
+        }
+
+        function closeSuccessModal() {
+            document.getElementById('successModal').classList.remove('flex');
+            document.getElementById('successModal').classList.add('hidden');
+        }
+
+        function copyCode() {
+            const codeText = document.getElementById('codeSnippet').textContent;
+            document.execCommand('copy');
+            event.target.textContent = '¡Copiado!';
+            setTimeout(() => { event.target.textContent = 'Copiar'; }, 2000);
+        }
+
+        // Initialize on load
+        window.onload = function() {
+            updateStatus();
+            updateCodeSnippet();
+        }
+    </script>
+</body>
+</html>
